@@ -6,20 +6,25 @@ const GifExpertApp = () => {
   
   
   
-  const [categories, setCategories] = useState(['One Punch']);
+  const [categories, setCategories] = useState([]);
 
 
-  const onAddCategorie=()=>{
-      setCategories([...categories,'Hola']);
+  const onAddCategorie=( category )=>{
+    if (categories.includes(category)){
+        alert(`Ya existe ${category}`);
+        return;
+    }
+    setCategories([...categories,category]);
   }
 
   return (
     <>
         <h1>GifExpertApp</h1>
 
-      {/*   <AddCategorie setCategories = { setCategories } /> */}
-
-        <AddCategorie addCategory = { setCategories } />
+        <AddCategorie 
+            // addCategory = { setCategories } 
+            onNewCategory = { (value)=>onAddCategorie(value) }
+        />
 
         <ol>
             { categories
