@@ -1,7 +1,7 @@
 import { useState } from "react";
 
 
-const AddCategorie = ({ setCategories }) => {
+const AddCategorie = ({ addCategory }) => {
 
 const [inputValue, setInputValue] = useState('One Punch')
 
@@ -14,7 +14,7 @@ const [inputValue, setInputValue] = useState('One Punch')
     event.preventDefault();
     if( inputValue.trim().length <= 4)return;
     
-    setCategories(categories=>[...categories,inputValue]);
+    addCategory(categories=>[...categories,inputValue]);
     setInputValue('');
  }
 

@@ -17,7 +17,9 @@ const GifExpertApp = () => {
     <>
         <h1>GifExpertApp</h1>
 
-        <AddCategorie setCategories ={ setCategories } />
+      {/*   <AddCategorie setCategories = { setCategories } /> */}
+
+        <AddCategorie addCategory = { setCategories } />
 
         <ol>
             { categories
