@@ -12,10 +12,12 @@ const [inputValue, setInputValue] = useState('One Punch')
 
  const onSubmit=(event)=>{
     event.preventDefault();
-    setCategories(categories=>[categories,...inputValue]);
+    if( inputValue.trim().length <= 4)return;
+    
+    setCategories(categories=>[...categories,inputValue]);
+    setInputValue('');
  }
 
- console.log(setCategories);
 
   return (
     <form onSubmit={(event)=> onSubmit(event)}>
