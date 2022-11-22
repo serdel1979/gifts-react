@@ -1,5 +1,4 @@
 import { useState } from "react";
-import * as R from 'ramda';
 
 
 const AddCategorie = ({ setCategories }) => {
@@ -16,9 +15,10 @@ const [inputValue, setInputValue] = useState('One Punch')
     setCategories(categories=>[categories,...inputValue]);
  }
 
+ console.log(setCategories);
 
   return (
-    <form onSubmit={(vent)=> onSubmit(event)}>
+    <form onSubmit={(event)=> onSubmit(event)}>
         <input
             type="text"
             placeholder="Buscar gift"
