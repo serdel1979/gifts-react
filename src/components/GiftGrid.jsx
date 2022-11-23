@@ -1,22 +1,33 @@
 import React, { useState, useEffect } from 'react'
 import { getGifs } from '../helpers/getGif';
+import Gif from './Gif';
 
 export const GiftGrid = ({ category }) => {
 
-   const [counter, setCounter] = useState(10);
-   
-   useEffect()
-   
-   getGifs(category);
-
-
   
+   const [images, setImages] = useState([]);
 
+
+   const getImages=async()=>{
+      const newImages = await getGifs(category);
+      setImages(newImages);
+  }
+
+   useEffect(()=>{
+      getImages();
+   },[])
+   
+  
    return (
     <>
-       <h3> { category } </h3>
-        <h5>{ counter }</h5>
-        <button onClick={()=>setCounter(counter+1)}>+1</button>
+       <h4> { category } </h4>
+       <div className="card-grid">
+        {
+          images.map(({id, title, url})=>{
+            return <Gif className="card" key={id} title={title} url={url} />
+          })
+        }
+       </div>
     </>
   )
 }

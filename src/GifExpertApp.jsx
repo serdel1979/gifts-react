@@ -21,7 +21,7 @@ const GifExpertApp = () => {
   
   return (
     <>
-        <h1>GifExpertApp</h1>
+        <h3>GifExpertApp</h3>
 
         <AddCategorie 
             onNewCategory = { onAddCategorie }
