@@ -15,7 +15,7 @@ const GifExpertApp = () => {
         alert(`Ya existe ${category}`);
         return;
     }
-    setCategories([...categories,category]);
+    setCategories([category,...categories]);
   }
 
   
