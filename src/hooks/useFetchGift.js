@@ -3,7 +3,7 @@ import React, {useState, useEffect} from 'react'
 import {getGifs} from '../helpers/getGif';
    
    
-const useFetchGift = ({ category }) => {
+const useFetchGift = (category) => {
 
 
    const [images, setImages] = useState ([]);
@@ -18,7 +18,7 @@ const useFetchGift = ({ category }) => {
 
    
    useEffect(()=>{
-      getImages();
+      getImages(category);
    },[])
 
 
