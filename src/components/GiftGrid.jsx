@@ -1,9 +1,11 @@
+import {checkPropTypes} from 'prop-types';
 import React, { useState, useEffect } from 'react'
 import { getGifs } from '../helpers/getGif';
 import useFetchGift from '../hooks/useFetchGift';
+import PropTypes from 'prop-types';
 import Gif from './Gif';
 
-export const GiftGrid = ({ category }) => {
+const GiftGrid = ({ category }) => {
 
   const {images, isLoading} = useFetchGift( category );
 
@@ -25,3 +27,9 @@ export const GiftGrid = ({ category }) => {
     </>
   )
 }
+
+GiftGrid.protoTypes = {
+  category: PropTypes.string.isRequired,
+}
+
+export default GiftGrid;

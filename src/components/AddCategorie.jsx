@@ -22,7 +22,7 @@ const [inputValue, setInputValue] = useState('')
 
 
   return (
-    <form onSubmit={onSubmit}>
+    <form onSubmit={onSubmit} aria-label="form">
         <input
             type="text"
             placeholder="Buscar gift"

@@ -2,7 +2,7 @@ import { useState } from "react";
 import  AddCategorie  from "./components/AddCategorie";
 import { GiftGrid } from "./components/GiftGrid";
 
-const GifExpertApp = () => {
+export const GifExpertApp = () => {
    
   
   
@@ -39,4 +39,4 @@ const GifExpertApp = () => {
   )
 }
 
-export default GifExpertApp
+
